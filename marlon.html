@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Now Playing - Thriller | Vinilos</title>
+    <link rel="stylesheet" href="style1.css">
+    <!-- Google Fonts para tipografía limpia -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Fondo dinámico / Video loop o ambiente -->
+    <div class="bg-overlay"></div>
+    <div class="background-visual">
+        <!-- Puedes cambiar el enlace del video por un loop de YouTube o MP4 local sin audio -->
+        <iframe src="https://www.youtube.com/embed/Zi_XLOBDo_Y?autoplay=1&mute=1&loop=1&playlist=Zi_XLOBDo_Y&controls=0&showinfo=0&autohide=1" frameborder="0" allow="autoplay"></iframe>
+    </div>
+
+    <div class="app-container">
+        <!-- Panel Izquierdo: Tornamesa visual y Carátula -->
+        <section class="visual-section">
+            <div class="album-art-container">
+                <img id="album-cover" src="" alt="Carátula del álbum">
+                <div class="vinyl-record" id="vinyl">
+                    <div class="vinyl-label">
+                        <span id="vinyl-label-text">SIDE A</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="album-info">
+                <h1 id="album-title">Thriller</h1>
+                <h2 id="artist-name">Michael Jackson</h2>
+            </div>
+
+            <!-- Selector de Lado A / Lado B -->
+            <div class="side-selector">
+                <button class="side-btn active" data-side="A">Lado A</button>
+                <button class="side-btn" data-side="B">Lado B</button>
+            </div>
+        </section>
+
+        <!-- Panel Derecho: Tracklist y Letras -->
+        <section class="content-section">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('tracks')">Lista de Canciones</button>
+                <button class="tab-btn" onclick="switchTab('lyrics')">Letra Activa</button>
+            </div>
+
+            <!-- Vista de Pistas -->
+            <div id="tracks-view" class="tab-content active">
+                <ul id="track-list" class="track-list">
+                    <!-- Se llena dinámicamente con JS -->
+                </ul>
+            </div>
+
+            <!-- Vista de Letras -->
+            <div id="lyrics-view" class="tab-content">
+                <div class="lyrics-header">
+                    <h3 id="current-track-title">Selecciona una canción</h3>
+                </div>
+                <div class="lyrics-body" id="lyrics-container">
+                    <p class="placeholder-text">Haz clic en una canción de la lista para ver su letra y disfrutar la experiencia en tu sala.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+</html>
